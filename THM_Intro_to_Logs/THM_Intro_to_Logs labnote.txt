@@ -1,0 +1,44 @@
+TITLE : Intro to Logs - TryHackMe
+
+Topic : Linux logs, logging and rsyslog
+
+objective : There are six tasks to  Understand the what is Log, how log was generated in the devices and network devices, what are the types of logs, 
+how it format, how logs are collected, managed, centralized in system, Log analysis-process and some techniques & tools for log analysis  
+
+commands Used : 
+ls
+ls -lsa
+The ls -lsa command lists directory contents with four combined settings:
+ ls: The base list command.
+ -l: Long format (shows details like permissions, owner, bytes, and date).
+ -s: Size (adds the allocated block size column on the far left).
+ -a: All files (includes hidden files starting with a .).
+cat
+head
+tail
+sudo systemctl status rsyslog
+cd
+nano /__/__/(var/log/syslog)
+ssh localhost
+
+-To check status of rsyslog
+sudo systemctl status rsyslog
+
+-To create configuration file(.conf file)
+nano /etc/rsyslog.d/98-websrv-02-sshd.conf
+
+-To get read the .conf file from terminal
+cd /var/log/websrv-02/
+cat "filename.conf"
+
+-To restart rsyslog for ssh localhost
+sudo systemctl restart rsyslog
+
+what I learned :
+As a beginner, I learned that Linux logs act like digital security cameras. 
+I learned about how logs are created, especially in linux, how rsyslog process log messages, standards for managing Logs, how to write rule to 
+separate ssh logs from other logs. These logs can be useful to understand in the system or computer or devices.
+
+SOC perspective :
+From a SOC perspective, these logs provide the vital clues needed to monitor networks. Mastering rsyslog to isolate events, like SSH logins, allows 
+analysts to detect brute-force attacks, track unauthorized access, and rapidly accelerate incident investigations.
